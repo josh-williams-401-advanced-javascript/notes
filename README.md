@@ -1,0 +1,2 @@
+# notes
+Week One Lab
