@@ -20,6 +20,7 @@ This app allows you to enter a note into a command line by typing with `-a` or `
 
 8/11/2020
 
-Test the app with `npm test`.  
+App is now organized with classes and has tests to chack that the functions work as expected.  
+Run the tests with `npm test`.  
 Sources: https://jestjs.io/docs/en/jest-object to learn to implement `spy` with notes.js tests.  
 
