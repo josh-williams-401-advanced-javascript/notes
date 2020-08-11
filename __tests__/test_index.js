@@ -10,6 +10,7 @@ minimist.mockImplementation(() => {
 });
 
 const Input = require('../lib/input.js');
+const Notes = require('../lib/notes.js');
 
 describe('Input Module', () => {
 
@@ -31,4 +32,17 @@ describe('Input Module', () => {
     expect(options.valid()).toBeFalsy();
   });
 
+});
+
+describe('Notes Module', () => {
+  it('A bad note is not logged', () => {
+    const spy = jest.spyOn(console, 'log');
+    new Notes({action: 'ERROR', payload: 'ERROR'});
+    expect(spy).not.toHaveBeenCalled();
+  });
+  it('A good note is logged', () => {
+    const spy = jest.spyOn(console, 'log');
+    new Notes({action: 'add', payload: 'test'});
+    expect(spy).toHaveBeenCalledWith('Adding Note: test');
+  });
 });
