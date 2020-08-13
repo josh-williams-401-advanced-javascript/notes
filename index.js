@@ -15,5 +15,9 @@ const { Console } = require('console');
 const input = new Input();
 const notes = new Notes();
 
-input.valid() ? notes.execute(input.command) : console.log('error');
+input.valid() ?
+  notes.execute(input.command)
+    .then(mongoose.disconnect)
+    .catch(error => console.error(error))
+  : console.log('error');
 

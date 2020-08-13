@@ -114,4 +114,4 @@ describe('parse category', () => {
     expect(command.payload).not.toBeDefined();
   });
 
-})
+});
