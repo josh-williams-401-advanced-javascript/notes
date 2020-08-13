@@ -115,3 +115,18 @@ describe('parse category', () => {
   });
 
 });
+
+describe('Parse delete', () => {
+  it('should parse --delete', () => {
+    const input = new Input();
+    const command = input.parse({ delete: 'someid' });
+    expect(command.action).toBe('delete');
+    expect(command.payload).toBe('someid');
+  });
+  it('should parse -d', () => {
+    const input = new Input();
+    const command = input.parse({ d: 'someid' });
+    expect(command.action).toBe('delete');
+    expect(command.payload).toBe('someid');
+  });
+});

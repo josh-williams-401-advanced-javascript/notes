@@ -24,3 +24,19 @@ App is now organized with classes and has tests to chack that the functions work
 Run the tests with `npm test`.  
 Sources: https://jestjs.io/docs/en/jest-object to learn to implement `spy` with notes.js tests.  
 
+### 8/12/2020
+
+App now has `--delete`, `--list`, and `--category` capabilities. I refactored my code so that it matches more closely to the provided tests.
+Add a category to your note with this:
+```
+node index.js --add "this is the note" --category "category name"
+```
+See a list of your notes with an optional category: 
+```
+node index.js --list "category name"
+```
+In the list, you can find the id of an item you want to delete: 
+```
+node index.js --delete id
+```
+The shortened versions of the commands are `-d`, `-l`, and `-c`
