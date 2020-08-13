@@ -42,7 +42,8 @@ describe('Notes Module', () => {
   });
   it('A good note is logged', () => {
     const spy = jest.spyOn(console, 'log');
-    new Notes({action: 'add', payload: 'test'});
-    expect(spy).toHaveBeenCalledWith('Adding Note: test');
+    // let noteTest = new Notes
+    new Notes().execute({action: 'add', payload: 'test'});
+    expect(spy).toHaveBeenCalledWith('note saved test');
   });
 });
