@@ -28,7 +28,7 @@ describe('Input Module', () => {
 
   it('valid() rejects an invalid object', () => {
     let options = new Input();
-    options.command = {}; // break it
+    options.command = {};
     expect(options.valid()).toBeFalsy();
   });
 
@@ -42,7 +42,7 @@ describe('Notes Module', () => {
   });
   it('A good note is logged', () => {
     const spy = jest.spyOn(console, 'log');
-    new Notes({action: 'add', payload: 'test'});
-    expect(spy).toHaveBeenCalledWith('Adding Note: test');
+    new Notes().execute({action: 'add', payload: 'test'});
+    expect(spy).toHaveBeenCalledWith('note saved test');
   });
 });
