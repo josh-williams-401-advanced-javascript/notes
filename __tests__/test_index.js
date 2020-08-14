@@ -37,7 +37,7 @@ describe('Input Module', () => {
 describe('Notes Module', () => {
   it('A bad note is not logged', () => {
     const spy = jest.spyOn(console, 'log');
-    new Notes({action: 'ERROR', payload: 'ERROR'});
+    new Notes().execute({action: undefined, payload: undefined});
     expect(spy).not.toHaveBeenCalled();
   });
   it('A good note is logged', () => {
