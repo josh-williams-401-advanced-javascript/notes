@@ -16,7 +16,7 @@ Run the app by entering this in terminal: `node index.js -a "This is my note"`
  
 This should produce `Adding Note: This is my note`
 
-This app allows you to enter a note into a command line by typing with `-a` or `--add`, and it will console.log the note you enter after that, which should be surrounded by quotes. It will not log anything with other commands, and it will not log anything if no note is written. The assignment says to run the program with `node notes.js` but that does not work with the file structure provided. It would work if `index.js` were renamed as `notes.js`.
+This app allows you to enter a note into a command line by typing with `-a` or `--add`, and it will console.log the note you enter after that, which should be surrounded by quotes. It will not log anything with other commands, and it will not log anything if no note is written.
 
 ### 8/11/2020
 
@@ -40,3 +40,7 @@ In the list, you can find the id of an item you want to delete:
 node index.js --delete id
 ```
 The shortened versions of the commands are `-d`, `-l`, and `-c`
+
+### 8/13/2020
+
+App now has a notes-collection.js page that performs all of the mongoose actions while maintaining all of the above capabilities. The app now has close to 100% coverage in the tests.

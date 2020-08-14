@@ -57,4 +57,16 @@ describe('Note Module', () => {
     await notes.execute({action: 'delete', payload: '123nDi89'});
     expect(consoleSpy).toHaveBeenCalledWith(`Unable to delete`);
   });
+  it('Will list display only correct categories', async () => {
+    const action = 'add';
+    const payload = 'test list';
+    const category = 'red';
+    await notes.execute({ action: 'action', payload: payload, category: category });
+    const payloadBlue = 'test list also';
+    const categoryBlue = 'blue';
+    await notes.execute({ action: action, payload: payloadBlue, category: categoryBlue });
+    await notes.execute({action: 'list', payload: categoryBlue});
+    expect(consoleSpy).toHaveBeenCalledWith(payloadBlue);
+    expect(consoleSpy).not.toHaveBeenCalledWith(payload);
+  });
 });

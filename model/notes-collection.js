@@ -10,8 +10,7 @@ class Collection {
 
   async create(text, category) {
     const newNoteToSave = new Note({text: text, category: category});
-    return await newNoteToSave.save()
-      .catch(() => console.log('error'));
+    return await newNoteToSave.save();
   }
 
   update() {
