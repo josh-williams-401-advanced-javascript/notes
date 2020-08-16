@@ -12,7 +12,7 @@ cd notes
 npm i
 ```
 
-Run the app by entering this in terminal: `node index.js -a "This is my note"` 
+Run the app by entering this in terminal: `node notes.js -a "This is my note"` 
  
 This should produce `Adding Note: This is my note`
 

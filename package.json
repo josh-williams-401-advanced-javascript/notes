@@ -1,8 +1,8 @@
 {
-  "name": "notes",
+  "name": "@joshuawilliams/notes",
   "version": "1.0.0",
   "description": "Week One Lab",
-  "main": "index.js",
+  "main": "notes.js",
   "directories": {
     "lib": "lib"
   },
@@ -27,5 +27,9 @@
     "jest": "^26.3.0",
     "minimist": "^1.2.5",
     "mongoose": "^5.9.28"
-  }
+  },
+  "bin": {
+    "notes": "notes.js"
+  },
+  "devDependencies": {}
 }
