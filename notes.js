@@ -15,9 +15,11 @@ const { Console } = require('console');
 const input = new Input();
 const notes = new Notes();
 
-input.valid() ?
+if (input.valid()) {
   notes.execute(input.command)
     .then(mongoose.disconnect)
-    .catch(error => console.error(error))
-  : console.log('error');
-
+    .catch(error => console.error(error));
+} else {
+  console.log('Error, invalid command');
+  mongoose.disconnect();
+}
