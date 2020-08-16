@@ -1,46 +1,48 @@
 # Notes
-## Week One Lab
 
-### 8/10/2020
-
-Set up Notes with the following commands:
+Download Notes with the following command:
 ```
-git clone https://github.com/josh-williams-401-advanced-javascript/notes.git
+npm install -g @joshuawilliams/notes
 
-cd notes
+```
+Run Notes:
+```
+notes --add "My first note"
+```
+The response should be:
+```
+note saved My first note
+```
+Add a note with `-a` or `--add`  
+Give the note a category by adding `-c` or `--category` after the note:
+```
+notes -a "My second note" --category "fun"
 
-npm i
+```
+If no category is listed, it will default to general.
+
+See all of your notes with `-l` or `--list`
+```
+notes --list
+```
+This will show all of your notes in this format: 
+```
+My first note
+Category: general   ID: 5f38c52dbc1076b8442c8731
+-------------------------------------------------------
 ```
 
-Run the app by entering this in terminal: `node notes.js -a "This is my note"` 
- 
-This should produce `Adding Note: This is my note`
-
-This app allows you to enter a note into a command line by typing with `-a` or `--add`, and it will console.log the note you enter after that, which should be surrounded by quotes. It will not log anything with other commands, and it will not log anything if no note is written.
-
-### 8/11/2020
-
-App is now organized with classes and has tests to chack that the functions work as expected.  
-Run the tests with `npm test`.  
-Sources: https://jestjs.io/docs/en/jest-object to learn to implement `spy` with notes.js tests.  
-
-### 8/12/2020
-
-App now has `--delete`, `--list`, and `--category` capabilities. I refactored my code so that it matches more closely to the provided tests.
-Add a category to your note with this:
+See all of your notes of a certain category:
 ```
-node index.js --add "this is the note" --category "category name"
+notes -l category-name
 ```
-See a list of your notes with an optional category: 
+Delete a note with `-d` or `--delete` followed by the id of the note you want to delete
 ```
-node index.js --list "category name"
+notes -d 5f38c52dbc1076b8442c8731
 ```
-In the list, you can find the id of an item you want to delete: 
+The response will be: 
 ```
-node index.js --delete id
+Deleted Note 5f38c52dbc1076b8442c8731
 ```
-The shortened versions of the commands are `-d`, `-l`, and `-c`
-
-### 8/13/2020
-
-App now has a notes-collection.js page that performs all of the mongoose actions while maintaining all of the above capabilities. The app now has close to 100% coverage in the tests.
+## License:
+MIT License
